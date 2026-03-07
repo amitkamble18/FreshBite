@@ -48,6 +48,7 @@ $pizzas = $pizza_data['total'];
 <a href="dashboard.php">Dashboard</a>
 <a href="orders.php">Orders</a>
 <a href="pizzas.php">Pizzas</a>
+<a href="messages.php">Messages</a>
 <a href="logout.php">Logout</a>
 
 </div>

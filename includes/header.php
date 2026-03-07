@@ -51,7 +51,7 @@ echo $count;
 
 <li><a href="orders.php">My Orders</a></li>
 
-<li class="user-greet">👤 Hello <?php echo $_SESSION['user_name']; ?></li>
+<li class="user-greet">👤 <?php echo $_SESSION['user_name']; ?></li>
 
 <li><a href="logout.php">Logout</a></li>
 

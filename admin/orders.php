@@ -30,6 +30,7 @@ $result = mysqli_query($conn,"SELECT * FROM orders ORDER BY id DESC");
 <a href="dashboard.php">Dashboard</a>
 <a href="orders.php">Orders</a>
 <a href="pizzas.php">Pizzas</a>
+<a href="messages.php">Messages</a>
 <a href="logout.php">Logout</a>
 
 </div>
