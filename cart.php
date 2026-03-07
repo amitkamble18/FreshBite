@@ -9,23 +9,17 @@ include 'includes/header.php';
 
 if(isset($_GET['remove'])){
 
-$remove_id = $_GET['remove'];
+$key = $_GET['remove'];
 
-foreach($_SESSION['cart'] as $key => $item){
-
-if($item['id'] == $remove_id){
+if(isset($_SESSION['cart'][$key])){
 
 unset($_SESSION['cart'][$key]);
 
-}
-
-}
-
-/* reindex array */
 $_SESSION['cart'] = array_values($_SESSION['cart']);
 
 }
 
+}
 /* ADD TO CART LOGIC */
 if(isset($_POST['add_to_cart'])){
 
@@ -84,7 +78,7 @@ $total = 0;
 
 if(isset($_SESSION['cart']) && count($_SESSION['cart']) > 0){
 
-foreach($_SESSION['cart'] as $item){
+foreach($_SESSION['cart'] as $key => $item){
 
 $subtotal = $item['price'] * $item['qty'];
 $total += $subtotal;
@@ -92,7 +86,7 @@ $total += $subtotal;
 
 <div class="cart-item">
 
-<img src="images/<?php echo isset($item['image']) ? $item['image'] : 'pizza-bg.jpg'; ?>" class="cart-img" alt="Pizza">
+<img src="images/<?php echo $item['image']; ?>" class="cart-img">
 
 <div class="cart-info">
 
@@ -104,7 +98,7 @@ $total += $subtotal;
 
 <p>Subtotal: ₹<?php echo $subtotal; ?></p>
 
-<a href="cart.php?remove=<?php echo $item['id']; ?>" class="remove-btn">Remove</a>
+<a href="cart.php?remove=<?php echo $key; ?>" class="remove-btn">Remove</a>
 
 </div>
 

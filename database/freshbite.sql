@@ -29,3 +29,12 @@ order_id INT,
 pizza_id INT,
 quantity INT
 );
+
+CREATE TABLE IF NOT EXISTS order_items(
+id INT AUTO_INCREMENT PRIMARY KEY,
+order_id INT,
+pizza_name VARCHAR(100),
+price DECIMAL(10,2),
+quantity INT
+);
+
