@@ -20,7 +20,7 @@ session_start();
 <header class="navbar">
 
 <div class="logo">
-FreshBite 🍕
+<a href="index.php">FreshBite 🍕</a>
 </div>
 
 <nav>
@@ -47,9 +47,12 @@ echo $count;
 </a>
 </li>
 
-<?php if(isset($_SESSION['user_name'])){ ?>
+<?php if(isset($_SESSION['user_id'])){ ?>
+
+<li><a href="orders.php">My Orders</a></li>
 
 <li class="user-greet">👤 Hello <?php echo $_SESSION['user_name']; ?></li>
+
 <li><a href="logout.php">Logout</a></li>
 
 <?php } else { ?>
@@ -57,6 +60,8 @@ echo $count;
 <li><a href="login.php">Login</a></li>
 
 <?php } ?>
+
+
 
 </ul>
 </nav>

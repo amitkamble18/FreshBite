@@ -26,12 +26,14 @@ $_SESSION['cart'] = [];
 
 $found = false;
 
-foreach($_SESSION['cart'] as &$item){
+foreach($_SESSION['cart'] as $key => $item){
 
-if($item['id'] == $pizza_id){
-$item['qty'] += $qty;
+if($_SESSION['cart'][$key]['id'] == $pizza_id){
+
+$_SESSION['cart'][$key]['qty'] += $qty;
 $found = true;
 break;
+
 }
 
 }
@@ -76,16 +78,17 @@ while($row = mysqli_fetch_assoc($result)){
 
 <p class="price">₹<?php echo $row['price']; ?></p>
 
-<form action="menu.php" method="POST">
+<form method="POST">
 
 <input type="hidden" name="pizza_id" value="<?php echo $row['id']; ?>">
 
 <input type="number" name="quantity" value="1" min="1">
 
-<button type="submit" name="add_to_cart">Add to Cart</button>
+<button type="submit" name="add_to_cart" value="<?php echo $row['id']; ?>">
+Add to Cart
+</button>
 
 </form>
-
 </div>
 
 <?php } ?>

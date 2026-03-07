@@ -20,50 +20,7 @@ $_SESSION['cart'] = array_values($_SESSION['cart']);
 }
 
 }
-/* ADD TO CART LOGIC */
-if(isset($_POST['add_to_cart'])){
 
-$pizza_id = $_POST['pizza_id'];
-$qty = $_POST['quantity'];
-
-$result = mysqli_query($conn,"SELECT * FROM pizzas WHERE id='$pizza_id'");
-$pizza = mysqli_fetch_assoc($result);
-
-/* create cart if not exists */
-if(!isset($_SESSION['cart'])){
-$_SESSION['cart'] = [];
-}
-
-$found = false;
-
-/* check if pizza already in cart */
-foreach($_SESSION['cart'] as &$item){
-
-if($item['id'] == $pizza_id){
-$item['qty'] += $qty;
-$found = true;
-break;
-}
-
-}
-unset($item);
-
-/* if not found add new */
-if(!$found){
-
-$item = [
-"id" => $pizza['id'],
-"name" => $pizza['name'],
-"price" => $pizza['price'],
-"image" => $pizza['image'],   // ADD THIS
-"qty" => $qty
-];
-
-$_SESSION['cart'][] = $item;
-
-}
-
-}
 ?>
 
 <section class="cart-section">

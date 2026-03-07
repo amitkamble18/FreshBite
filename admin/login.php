@@ -35,23 +35,21 @@ $error = "Invalid login";
 
 <div class="admin-login-container">
 
-<h2>Admin Login</h2>
+    <div class="admin-login-box">
 
-<form method="POST" class="admin-login-form">
+        <h2>Admin Login</h2>
 
-<input type="text" name="username" placeholder="Username" required>
+        <form method="POST" class="admin-login-form">
 
-<input type="password" name="password" placeholder="Password" required>
+            <input type="text" name="username" placeholder="Username" required>
 
-<button type="submit" name="login">Login</button>
+            <input type="password" name="password" placeholder="Password" required>
 
-</form>
+            <button name="login">Login</button>
 
-<?php if(isset($error)){ ?>
+        </form>
 
-<p class="error"><?php echo $error; ?></p>
-
-<?php } ?>
+    </div>
 
 </div>
 

@@ -1,5 +1,12 @@
 <?php
 session_start();
+
+/* CHECK IF USER IS LOGGED IN */
+if(!isset($_SESSION['user_id'])){
+header("Location: login.php");
+exit();
+}
+
 include 'includes/db.php';
 include 'includes/header.php';
 
@@ -21,7 +28,10 @@ $address = $_POST['address'];
 $phone = $_POST['phone'];
 
 /* insert order */
-mysqli_query($conn,"INSERT INTO orders(user_id,total,status) VALUES (0,'$total','Placed')");
+$user_id = $_SESSION['user_id'];
+
+mysqli_query($conn,"INSERT INTO orders(user_id,total,status) 
+VALUES ('$user_id','$total','Placed')");
 
 $order_id = mysqli_insert_id($conn);
 

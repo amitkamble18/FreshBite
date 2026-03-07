@@ -13,7 +13,12 @@ if(isset($_POST['add'])){
 
 $name = $_POST['name'];
 $price = $_POST['price'];
-$image = $_POST['image'];
+$image = time()."_".$_FILES['image']['name'];
+$tmp = $_FILES['image']['tmp_name'];
+
+if($image != ""){
+move_uploaded_file($tmp, "../images/".$image);
+}
 
 mysqli_query($conn,"INSERT INTO pizzas(name,price,image)
 VALUES('$name','$price','$image')");
@@ -48,6 +53,7 @@ $result = mysqli_query($conn,"SELECT * FROM pizzas");
 <a href="dashboard.php">Dashboard</a>
 <a href="orders.php">Orders</a>
 <a href="pizzas.php">Pizzas</a>
+<a href="messages.php">Messages</a>
 <a href="logout.php">Logout</a>
 
 </div>
@@ -58,13 +64,13 @@ $result = mysqli_query($conn,"SELECT * FROM pizzas");
 
 <h1>Manage Pizzas</h1>
 
-<form method="POST">
+<form method="POST" enctype="multipart/form-data" class="admin-form">
 
 <input type="text" name="name" placeholder="Pizza Name" required>
 
 <input type="number" name="price" placeholder="Price" required>
 
-<input type="text" name="image" placeholder="Image name (pizza.jpg)" required>
+<input type="file" name="image" required>
 
 <button name="add">Add Pizza</button>
 
@@ -97,8 +103,7 @@ $result = mysqli_query($conn,"SELECT * FROM pizzas");
 
 <td>
 
-<a href="edit_pizza.php?id=<?php echo $row['id']; ?>">Edit</a>
-
+<a href="edit_pizza.php?id=<?php echo $row['id']; ?>">Edit</a> |
 <a href="delete_pizza.php?id=<?php echo $row['id']; ?>">Delete</a>
 
 </td>

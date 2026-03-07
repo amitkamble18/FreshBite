@@ -34,15 +34,15 @@ mysqli_query($conn,"INSERT INTO pizzas (name,price,image) VALUES
 ('Margherita',199,'margherita.jpg'),
 ('Farmhouse',299,'farmhouse.jpg'),
 ('Peppy Paneer',249,'paneer.jpg'),
-('Veggie Delight',279,'pizza-bg.jpg'),
-('Cheese Burst',329,'margherita.jpg'),
-('Mexican Green Wave',309,'farmhouse.jpg'),
-('Paneer Tikka',289,'paneer.jpg'),
-('Veg Extravaganza',349,'pizza-bg.jpg'),
-('Classic Corn',219,'margherita.jpg'),
-('Italian Special',339,'farmhouse.jpg'),
-('Spicy Veg',259,'paneer.jpg'),
-('Loaded Cheese',369,'pizza-bg.jpg')
+('Veggie Delight',279,'Veggie-Delight.jpg'),
+('Cheese Burst',329,'cheese-burst.jpg'),
+('Mexican Green Wave',309,'mexican.jpg'),
+('Paneer Tikka',289,'paneer-tikka.jpg'),
+('Veg Extravaganza',349,'Veg-Extravaganza.jpg'),
+('Classic Corn',219,'classic-corn.jpg'),
+('Italian Special',339,'italian-special.jpg'),
+('Spicy Veg',259,'spicy-veg.jpg'),
+('Loaded Cheese',369,'loaded-cheese.jpg')
 ");
 
 }

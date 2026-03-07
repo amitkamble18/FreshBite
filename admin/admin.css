@@ -1,4 +1,4 @@
-/* ADMIN DASHBOARD */
+/* RESET */
 
 *{
 margin:0;
@@ -7,16 +7,21 @@ box-sizing:border-box;
 font-family:Arial, Helvetica, sans-serif;
 }
 
-/* Page layout */
+body{
+background:#111;
+color:white;
+
+min-height:100vh;
+}
+
+/* ================= ADMIN LAYOUT ================= */
 
 .admin-container{
 display:flex;
 min-height:100vh;
-background:#111;
-color:white;
 }
 
-/* Sidebar */
+/* ================= SIDEBAR ================= */
 
 .sidebar{
 width:220px;
@@ -39,24 +44,22 @@ color:white;
 text-decoration:none;
 }
 
-.sidebar a:hover{
-background:#ff4d4d;
-}
+.sidebar a:hover
 
-/* Main content */
+/* ================= MAIN CONTENT ================= */
 
 .main-content{
 flex:1;
-padding:40px;
-overflow:auto;
+padding:60px 40px;
+max-width:1100px;
+margin:0 auto;
 }
-
-
 .main-content h1{
-margin-bottom:30px;
+margin-bottom:35px;
+font-size:32px;
 }
 
-/* Dashboard cards */
+/* ================= DASHBOARD CARDS ================= */
 
 .cards{
 display:flex;
@@ -81,38 +84,44 @@ font-size:24px;
 color:#ff4d4d;
 }
 
-/* Tables */
+/* ================= TABLE ================= */
 
 table{
 width:100%;
 background:#242424;
 border-radius:8px;
 overflow:hidden;
+border-collapse:collapse;
+margin-top:20px;
+}
+
+th, td{
+padding:12px 15px;
+text-align:left;
 }
 
 th{
 background:#ff4d4d;
-padding:10px;
 }
 
-td{
-padding:10px;
+tr{
 border-bottom:1px solid #333;
 }
 
 tr:hover{
-background:#222;
+background:#2a2a2a;
 }
 
-/* something important */
-form{
+/* ================= ADMIN FORMS ================= */
+
+.admin-form{
 margin-bottom:25px;
 display:flex;
 gap:10px;
 flex-wrap:wrap;
 }
 
-input{
+.admin-form input{
 padding:8px;
 border:none;
 border-radius:5px;
@@ -120,7 +129,7 @@ background:#333;
 color:white;
 }
 
-button{
+.admin-form button{
 background:#ff4d4d;
 border:none;
 padding:8px 15px;
@@ -129,6 +138,174 @@ border-radius:5px;
 cursor:pointer;
 }
 
-button:hover{
+.admin-form button:hover{
 background:#e60000;
 }
+
+/* ================= ADMIN LOGIN PAGE ================= */
+
+.admin-login-container{
+width:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.admin-login-box{
+background:#1f1f1f;
+padding:40px;
+border-radius:10px;
+width:320px;
+box-shadow:0 5px 20px rgba(0,0,0,0.6);
+text-align:center;
+}
+
+.admin-login-box h2{
+margin-bottom:25px;
+color:white;
+}
+
+.admin-login-form{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.admin-login-form input{
+width:100%;
+padding:12px;
+border:none;
+border-radius:6px;
+background:#333;
+color:white;
+}
+
+.admin-login-form button{
+width:100%;
+padding:12px;
+background:#ff4d4d;
+border:none;
+border-radius:6px;
+color:white;
+cursor:pointer;
+}
+
+.admin-login-form button:hover{
+background:#e60000;
+}
+
+/* ORDER STATUS COLORS */
+
+.status-placed{
+background:#ffc107;
+color:black;
+padding:4px 10px;
+border-radius:5px;
+font-size:13px;
+}
+
+.status-preparing{
+background:#17a2b8;
+color:white;
+padding:4px 10px;
+border-radius:5px;
+font-size:13px;
+}
+
+.status-delivered{
+background:#28a745;
+color:white;
+padding:4px 10px;
+border-radius:5px;
+font-size:13px;
+}
+.status-cancelled{
+    background: #dc3545;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-size: 13px;
+}
+/* ================= ADMIN PANEL ================= */
+
+.admin-container{
+display:flex;
+min-height:100vh;
+}
+
+/* Sidebar */
+
+.sidebar{
+width:230px;
+background:#000;
+padding:30px 20px;
+}
+
+.sidebar h2{
+color:#ff4d4d;
+margin-bottom:30px;
+}
+
+.sidebar a{
+display:block;
+padding:12px;
+margin-bottom:12px;
+background:#1f1f1f;
+color:white;
+text-decoration:none;
+border-radius:6px;
+transition:0.3s;
+}
+
+.sidebar a:hover{
+background:#333;
+}
+
+/* Admin content */
+
+.admin-content{
+flex:1;
+padding:40px;
+}
+
+/* Orders table */
+
+.admin-table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+}
+
+.admin-table th{
+background:#ff4d4d;
+padding:12px;
+text-align:left;
+}
+
+.admin-table td{
+padding:12px;
+border-bottom:1px solid #333;
+}
+
+/* Status badge */
+
+.status{
+background:#17a2b8;
+padding:5px 10px;
+border-radius:6px;
+font-size:13px;
+}
+
+/* Action links */
+
+.actions a{
+margin-right:10px;
+text-decoration:none;
+color:#00aaff;
+font-size:14px;
+}
+
+.actions a:hover{
+text-decoration:underline;
+}
+

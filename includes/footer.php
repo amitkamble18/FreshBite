@@ -19,8 +19,8 @@
 
 <div class="footer-box">
 <h3>Contact</h3>
-<p>📍 Nashik, Maharashtra</p>
-<p>📞 +91 98765 43210</p>
+<p>📍 Latur, Maharashtra</p>
+<p>📞 +91 12345 678910</p>
 <p>✉ freshbite@gmail.com</p>
 </div>
 

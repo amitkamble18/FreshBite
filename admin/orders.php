@@ -30,7 +30,6 @@ $result = mysqli_query($conn,"SELECT * FROM orders ORDER BY id DESC");
 <a href="dashboard.php">Dashboard</a>
 <a href="orders.php">Orders</a>
 <a href="pizzas.php">Pizzas</a>
-<a href="view_order.php?id=<?php echo $row['id']; ?>">View</a>
 <a href="logout.php">Logout</a>
 
 </div>
@@ -59,17 +58,26 @@ $result = mysqli_query($conn,"SELECT * FROM orders ORDER BY id DESC");
 
 <td>₹<?php echo $row['total']; ?></td>
 
-<td><?php echo $row['status']; ?></td>
+<td>
+<span class="status-<?php echo strtolower($row['status']); ?>">
+<?php echo $row['status']; ?>
+</span>
+</td>
 
 <td><?php echo $row['created_at']; ?></td>
 
 <td>
 
-<a href="view_order.php?id=<?php echo $row['id']; ?>">View</a>
+<td>
 
-<a href="update_order.php?id=<?php echo $row['id']; ?>&status=Preparing">Preparing</a>
+<a href="view_order.php?id=<?php echo $row['id']; ?>">View</a> |
 
-<a href="update_order.php?id=<?php echo $row['id']; ?>&status=Delivered">Delivered</a>
+<a href="update_order.php?id=<?php echo $row['id']; ?>&status=Preparing">Preparing</a> |
+
+<a href="update_order.php?id=<?php echo $row['id']; ?>&status=Delivered">Delivered</a> |
+
+<a href="update_order.php?id=<?php echo $row['id']; ?>&status=Cancelled"
+onclick="return confirm('Cancel this order?')">Cancel</a>
 
 </td>
 
