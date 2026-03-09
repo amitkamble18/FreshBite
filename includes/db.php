@@ -6,10 +6,13 @@ if(!$conn){
     die("Database connection failed: " . mysqli_connect_error());
 }
 
+/* Create database */
 mysqli_query($conn,"CREATE DATABASE IF NOT EXISTS freshbite");
 
+/* Select database */
 mysqli_select_db($conn,"freshbite");
 
+/* Users table */
 mysqli_query($conn,"CREATE TABLE IF NOT EXISTS users(
 id INT AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(100),
@@ -17,6 +20,7 @@ email VARCHAR(100),
 password VARCHAR(255)
 )");
 
+/* Pizzas table */
 mysqli_query($conn,"CREATE TABLE IF NOT EXISTS pizzas(
 id INT AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(100),
@@ -24,11 +28,10 @@ price DECIMAL(10,2),
 image VARCHAR(255)
 )");
 
-/* ---------- ADD THIS PART HERE ---------- */
-
+/* Check if pizzas table already has data */
 $check = mysqli_query($conn,"SELECT * FROM pizzas");
 
-if(mysqli_num_rows($check) == 0){
+if($check && mysqli_num_rows($check) == 0){
 
 mysqli_query($conn,"INSERT INTO pizzas (name,price,image) VALUES
 ('Margherita',199,'margherita.jpg'),
@@ -47,8 +50,7 @@ mysqli_query($conn,"INSERT INTO pizzas (name,price,image) VALUES
 
 }
 
-/* ---------- END HERE ---------- */
-
+/* Orders table */
 mysqli_query($conn,"CREATE TABLE IF NOT EXISTS orders(
 id INT AUTO_INCREMENT PRIMARY KEY,
 user_id INT,
@@ -57,6 +59,7 @@ status VARCHAR(50),
 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 )");
 
+/* Order items table */
 mysqli_query($conn,"CREATE TABLE IF NOT EXISTS order_items(
 id INT AUTO_INCREMENT PRIMARY KEY,
 order_id INT,
