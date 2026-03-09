@@ -45,7 +45,8 @@ mysqli_query($conn,"INSERT INTO pizzas (name,price,image) VALUES
 ('Classic Corn',219,'classic-corn.jpg'),
 ('Italian Special',339,'italian-special.jpg'),
 ('Spicy Veg',259,'spicy-veg.jpg'),
-('Loaded Cheese',369,'loaded-cheese.jpg')
+('Loaded Cheese',369,'loaded-cheese.jpg'),
+('Pepperoni',249,'pepporoni.jpg')
 ");
 
 }
