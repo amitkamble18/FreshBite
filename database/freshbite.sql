@@ -32,3 +32,11 @@ order_id INT,
 pizza_id INT,
 quantity INT
 ) ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS contact_messages (
+id INT AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(100),
+email VARCHAR(100),
+message TEXT,
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB;
