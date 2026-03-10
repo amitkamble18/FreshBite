@@ -1,6 +1,5 @@
 <?php include 'includes/header.php'; ?>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-<
 
 <!-- HERO SECTION -->
 <section class="hero">
@@ -28,28 +27,72 @@ and place your order in just a few clicks.
 
 <div class="pizza-container">
 
+<!-- PIZZA 1 -->
 <div class="pizza-card">
+
+<form action="cart.php" method="POST">
+
 <img src="images/margherita.jpg">
+
 <h3>Margherita</h3>
 <p>Classic delight with cheese and tomato</p>
+
 <span>₹199</span>
-<button>Add to Cart</button>
+
+<input type="hidden" name="name" value="Margherita">
+<input type="hidden" name="price" value="199">
+<input type="hidden" name="image" value="margherita.jpg">
+
+<button type="submit" name="add_to_cart">Add to Cart</button>
+
+</form>
+
 </div>
 
+
+<!-- PIZZA 2 -->
 <div class="pizza-card">
+
+<form action="cart.php" method="POST">
+
 <img src="images/mexican.jpg">
-<h3>Mexican</h3>
+
+<h3>Peppy Paneer</h3>
 <p>Topped with zesty enchilada sauce</p>
+
 <span>₹249</span>
-<button>Add to Cart</button>
+
+<input type="hidden" name="name" value="Peppy Paneer">
+<input type="hidden" name="price" value="249">
+<input type="hidden" name="image" value="mexican.jpg">
+
+<button type="submit" name="add_to_cart">Add to Cart</button>
+
+</form>
+
 </div>
 
+
+<!-- PIZZA 3 -->
 <div class="pizza-card">
+
+<form action="cart.php" method="POST">
+
 <img src="images/farmhouse.jpg">
+
 <h3>Farmhouse</h3>
 <p>Veggies loaded pizza</p>
-<span>₹229</span>
-<button>Add to Cart</button>
+
+<span>₹299</span>
+
+<input type="hidden" name="name" value="Farmhouse">
+<input type="hidden" name="price" value="299">
+<input type="hidden" name="image" value="farmhouse.jpg">
+
+<button type="submit" name="add_to_cart">Add to Cart</button>
+
+</form>
+
 </div>
 
 </div>

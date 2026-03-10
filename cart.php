@@ -5,6 +5,23 @@ session_start();
 include 'includes/db.php';
 include 'includes/header.php';
 
+if(isset($_POST['add_to_cart'])){
+
+$name = $_POST['name'];
+$price = $_POST['price'];
+$image = $_POST['image'];
+
+$item = [
+    "name" => $name,
+    "price" => $price,
+    "image" => $image,
+    "qty" => 1
+];
+
+$_SESSION['cart'][] = $item;
+
+}
+
 /* REMOVE ITEM FROM CART */
 
 if(isset($_GET['remove'])){
